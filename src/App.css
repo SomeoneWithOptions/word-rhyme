@@ -19,7 +19,7 @@ h1 {
 }
 
 footer a {
-  display : flex;
+  display: flex;
   color: white;
   font-size: 1rem;
   font-weight: 200;
@@ -28,12 +28,14 @@ footer a {
   text-decoration: none;
 }
 
+.footerAnimation {
+  animation: footerAnimationOnLoad 2s ease forwards;
+}
 
-
-footer  img{
-  position : relative;
+footer img {
+  position: relative;
   bottom: -5px;
-  left : 5px;
+  left: 5px;
   width: 40px;
   height: 40px;
 }
@@ -44,5 +46,14 @@ footer  img{
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes footerAnimationOnLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -2,9 +2,9 @@ import instagramLogo from "../Assets/instagram-logo-white.png";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footerAnimation">
       <a
-        href="https://www.instagram.com/andrescastellanos_/"
+        href="https://www.instagram.com/sanetomore/"
         target="_blank"
         rel="noreferrer"
       >
