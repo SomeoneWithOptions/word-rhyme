@@ -11,5 +11,20 @@ h1 {
   font-size: 2.5rem;
   font-weight: 200;
   color: white;
-  
 }
+
+.loading-icon {
+  width: 80px;
+  filter: invert(100%);
+  animation: loading 1s infinite ease-out;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+  
