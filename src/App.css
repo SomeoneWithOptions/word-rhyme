@@ -1,10 +1,15 @@
 .App {
   text-align: center;
   font-family: 'Poppins', sans-serif;
+
+}
+body {
+  background-color: #7B081D;
 }
 
 h1 {
   font-size: 2.5rem;
   font-weight: 200;
-  color: #333;
+  color: white;
+  
 }
