@@ -2,12 +2,13 @@
 import './App.css';
 import Loading from './Components/Loading';
 import Footer from './Components/Footer';
+import Form from './Components/Form';
 
 function App() {
   return (
     <div className="App">
-      <h1>Andres Castellanos</h1>
-      <Loading />
+      <Form/>
+      {/* <Loading /> */}
       <Footer/>
     </div>
 
