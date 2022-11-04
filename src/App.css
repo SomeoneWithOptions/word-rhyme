@@ -1,10 +1,9 @@
 .App {
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-
+  font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #7B081D;
+  background-color: #7b081d;
 }
 
 h1 {
@@ -19,6 +18,26 @@ h1 {
   animation: loading 1s infinite ease-out;
 }
 
+footer a {
+  display : flex;
+  color: white;
+  font-size: 1rem;
+  font-weight: 200;
+  position: absolute;
+  bottom: 0;
+  text-decoration: none;
+}
+
+
+
+footer  img{
+  position : relative;
+  bottom: -5px;
+  left : 5px;
+  width: 40px;
+  height: 40px;
+}
+
 @keyframes loading {
   0% {
     transform: rotate(0deg);
@@ -27,4 +46,3 @@ h1 {
     transform: rotate(360deg);
   }
 }
-  
