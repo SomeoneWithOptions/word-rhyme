@@ -1,6 +1,7 @@
 import instagramLogo from "../Assets/instagram-logo-white.png";
 
 function Footer() {
+
   return (
     <footer className="footerAnimation">
       <a
@@ -13,13 +14,6 @@ function Footer() {
       </a>
     </footer>
   );
-}
-
-function RemoveLoadAnimation() {
-  setTimeout(() => {
-  const footer = document.querySelector("footer")[0];
-    footer.classList.remove("footerAnimation");
-  }, 2000);
 }
 
 export default Footer;

@@ -28,7 +28,6 @@ body {
   text-align: center;
 }
 
-
 #form button { 
   padding: 1rem;
   margin: 1rem 0;
@@ -38,6 +37,7 @@ body {
   font-weight: 600;
   background-color: #fff;
   color: #7b081da8;
+  cursor: pointer;
   
 }
 .loading-icon {
@@ -67,6 +67,21 @@ footer img {
   left: 5px;
   width: 40px;
   height: 40px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap : 1rem;
+}
+li{
+  color : white;
+  font-size : 1.5rem;
 }
 
 @media (min-width: 768px) {
