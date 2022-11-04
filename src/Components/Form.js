@@ -1,8 +1,9 @@
 import { fetchRhymes } from "../API/fetchRhymes";
-import { useRef, useState } from "react";
+import { useRef, useState} from "react";
 import Loading from "./Loading";
 
-function Form() {
+
+function Form({ setFooterAnimationClasses }) {
   const [APIWords, setAPIWords] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -23,11 +24,17 @@ function Form() {
         <input ref={wordInput} id="wordInput" type="text" />
         <button onClick={(e) => handleClick(e)}>Get Rhymes</button>
       </div>
-          <div className="words-container">{loading ? <Loading /> : <ul>
-              {APIWords.map((word) => (
-                  <li key={word.word}>{word.word}</li>
-                ))}
-          </ul>}</div>
+      <div className="words-container">
+        {loading ? (
+          <Loading />
+        ) : (
+          <ul>
+            {APIWords.map((word) => (
+              <li key={word.word}>{word.word}</li>
+            ))}
+          </ul>
+        )}
+      </div>
     </>
   );
 }

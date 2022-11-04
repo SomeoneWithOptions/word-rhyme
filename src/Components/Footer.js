@@ -1,5 +1,4 @@
 import instagramLogo from "../Assets/instagram-logo-white.png";
-
 function Footer() {
 
   return (
@@ -9,8 +8,8 @@ function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        <p>Andres Castellanos</p>
-        <img src={instagramLogo} alt="Logo" className="logo" />
+        <p className="footerFontReduce">Andres Castellanos</p>
+        <img src={instagramLogo} alt="Logo" className="logo footerimageReduce" />
       </a>
     </footer>
   );
