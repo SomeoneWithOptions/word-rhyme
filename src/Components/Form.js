@@ -23,7 +23,7 @@ function Form() {
         <input ref={wordInput} id="wordInput" type="text" />
         <button onClick={(e) => handleClick(e)}>Get Rhymes</button>
       </div>
-          <div>{loading ? <Loading /> : <ul>
+          <div className="words-container">{loading ? <Loading /> : <ul>
               {APIWords.map((word) => (
                   <li key={word.word}>{word.word}</li>
                 ))}

@@ -46,6 +46,13 @@ body {
   animation: loading 1s infinite ease-out;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+
 footer a {
   display: flex;
   color: white;
@@ -62,7 +69,6 @@ footer a {
 }
 
 footer img {
-  position: relative;
   bottom: -5px;
   left: 5px;
   width: 40px;
@@ -75,7 +81,7 @@ ul {
   justify-content: center;
   align-items: center;
   list-style: none;
-  padding: 0;
+  padding: 0  0 4rem 0;
   margin: 0;
   gap : 1rem;
 }
@@ -84,6 +90,9 @@ li{
   font-size : 1.5rem;
 }
 
+.words-container{
+margin-bot : 3rem;
+}
 @media (min-width: 768px) {
   body {
     display: flex;
