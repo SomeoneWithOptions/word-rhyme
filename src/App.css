@@ -18,7 +18,13 @@
 }
 
 body {
-  background-color: #7b081d;
+  height: 100vh;
+  background-color: rgba(240, 52, 62, 1);
+  background-image: linear-gradient(
+    90deg,
+    rgba(240, 52, 62, 1) 6%,
+    rgba(37, 48, 75, 1) 100%
+  );
 }
 
 #form {
@@ -68,7 +74,6 @@ footer {
   right: 0;
   bottom: 20px;
   left: 35%;
-
 }
 
 footer a {
@@ -109,7 +114,7 @@ li {
 
 @media (min-width: 768px) {
   body {
-    margin : 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
