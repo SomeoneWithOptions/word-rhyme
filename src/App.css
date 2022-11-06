@@ -109,6 +109,7 @@ li {
 
 @media (min-width: 768px) {
   body {
+    margin : 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,7 +135,7 @@ li {
   }
   footer {
     position: absolute;
-    bottom: 0;
+    top: 20px;
     left: 20px;
   }
 }
