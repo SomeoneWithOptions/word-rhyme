@@ -7,6 +7,7 @@ function Form() {
   const [loading, setLoading] = useState(false);
 
   const wordInput = useRef(null);
+  const buttonInput = useRef(null);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ function Form() {
       setAPIWords(data);
       setLoading(false);
       e.target.blur();
+      buttonInput.current.focus();
     });
   };
 
@@ -33,7 +35,7 @@ function Form() {
       <form id="form" onSubmit={e => handleClick(e)}>
         <label htmlFor="wordInput">Your Word: </label>
         <input ref={wordInput} id="wordInput" type="text" />
-        <button onClick={(e) => handleClick(e)}>Get Rhymes</button>
+        <button onClick={(e) => handleClick(e)} ref={buttonInput}>Get Rhymes</button>
       </form>
       <div className="words-container">
         {loading ? (
