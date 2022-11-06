@@ -5,14 +5,14 @@ import Loading from "./Loading";
 function Form() {
   const [APIWords, setAPIWords] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [inputWord, setInputWord] = useState("");
 
-  const wordInput = useRef(null);
   const buttonInput = useRef(null);
 
   const handleClick = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetchRhymes(wordInput.current.value).then((data) => {
+    fetchRhymes(inputWord).then((data) => {
       setAPIWords(data);
       setLoading(false);
       e.target.blur();
@@ -20,35 +20,43 @@ function Form() {
     });
   };
 
-
- function handleRhymeWords(e){ 
-   e.preventDefault();
-   wordInput.current.value = e.target.innerText;
-   fetchRhymes(wordInput.current.value).then((data) => {
-    setAPIWords(data);
-    setLoading(false);
-   });
-   
+  function handleRhymeWords(e) {
+    e.preventDefault();
+    setInputWord (e.target.innerText);
+    fetchRhymes(e.target.innerText).then((data) => {
+      setAPIWords(data);
+    });
   }
   return (
     <>
-      <form id="form" onSubmit={e => handleClick(e)}>
+      <form id="form" onSubmit={(e) => handleClick(e)}>
         <label htmlFor="wordInput">Your Word: </label>
-        <input ref={wordInput} id="wordInput" type="text" />
-        <button onClick={(e) => handleClick(e)} ref={buttonInput}>Get Rhymes</button>
+        <input
+          id="wordInput"
+          type="text"
+          onChange={(e) => setInputWord(e.target.value)}
+          value={inputWord}
+        />
+        <button onClick={(e) => handleClick(e)} ref={buttonInput}>
+          Get Rhymes
+        </button>
       </form>
       <div className="words-container">
         {loading ? (
           <Loading />
         ) : (
           <ul>
-              {APIWords.map((item) => {
-                return <li key={item.word} className="rhyme-words-effect" onClick={e => handleRhymeWords(e)}>
+            {APIWords.map((item) => {
+              return (
+                <li
+                  key={item.word}
+                  className="rhyme-words-effect"
+                  onClick={(e) => handleRhymeWords(e)}
+                >
                   {item.word}
                 </li>
-              }
-            )}
-          
+              );
+            })}
           </ul>
         )}
       </div>
