@@ -51,7 +51,7 @@ body {
 }
 
 #form button {
-  padding: .5rem 2rem .5rem 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   margin: 1rem 0;
   border: solid 2px white;
   border-radius: 0.5rem;
@@ -141,7 +141,7 @@ li {
 }
 
 .rhyme-words-effect {
-  animation: rhyme-words-effect 400ms ease forwards;
+  animation: rhyme-words-effect 500ms ease forwards;
 }
 
 .footerFontReduce {
@@ -193,7 +193,7 @@ li {
 @keyframes rhyme-words-effect {
   0% {
     opacity: 0;
-    transform: translateX(-300px);
+    transform: translateX(-100px);
   }
   100% {
     opacity: 1;
