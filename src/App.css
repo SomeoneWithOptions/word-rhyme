@@ -53,12 +53,12 @@ body {
 #form button {
   padding: 1rem;
   margin: 1rem 0;
-  border: none;
+  border: solid 2px white;
   border-radius: 0.5rem;
   font-size: 2rem;
   font-weight: 600;
-  background-color: #fff;
-  color: #7b081da8;
+  background-color: transparent;
+  color: white;
   cursor: pointer;
   box-shadow: var(--shadow-elevation-high);
 }
@@ -69,30 +69,24 @@ body {
 }
 
 footer {
-  position: absolute;
-
-  left: 35%;
+  width: 100%;
 }
 
 footer a {
-  display: flex;
   color: white;
-  font-size: 1rem;
-  font-weight: 200;
-  bottom: 0;
-  left: 5px;
   text-decoration: none;
+}
+footer p {
+  margin-bottom: 0;
+}
+
+footer img {
+  width: 40px;
+  height: 40px;
 }
 
 .footerAnimation {
   animation: footerAnimationOnLoad 2s ease forwards;
-}
-
-footer img {
-  bottom: -5px;
-  left: 5px;
-  width: 40px;
-  height: 40px;
 }
 
 ul {
@@ -101,7 +95,7 @@ ul {
   justify-content: center;
   align-items: center;
   list-style: none;
-  padding: 0 0 .5rem 0;
+  padding: 0 0 0.5rem 0;
   margin: 0;
   gap: 1rem;
 }
@@ -132,14 +126,17 @@ li {
     font-size: 3rem;
   }
   #form button {
-    font-size: 3rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 2rem;
     width: fit-content;
     align-self: center;
+    position: relative;
+    color: white;
+    transition: scale 200ms ease;
   }
-  footer {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+  #form button:hover {
+    transition: scale 200ms ease;
+    scale: 1.1;
   }
 }
 
