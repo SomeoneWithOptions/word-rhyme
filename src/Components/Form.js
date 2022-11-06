@@ -5,7 +5,6 @@ import Loading from "./Loading";
 function Form() {
   const [APIWords, setAPIWords] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [RhymeWord, setRhymeWord] = useState("");
 
   const wordInput = useRef(null);
 
@@ -15,6 +14,7 @@ function Form() {
     fetchRhymes(wordInput.current.value).then((data) => {
       setAPIWords(data);
       setLoading(false);
+      e.target.blur();
     });
   };
 
