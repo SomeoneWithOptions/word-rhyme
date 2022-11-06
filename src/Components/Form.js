@@ -1,13 +1,13 @@
 import { fetchRhymes } from "../API/fetchRhymes";
-import { useRef, useState} from "react";
+import { useRef, useState } from "react";
 import Loading from "./Loading";
 
-
-function Form({ setFooterAnimationClasses }) {
+function Form() {
   const [APIWords, setAPIWords] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const wordInput = useRef(null);
+
   const handleClick = (e) => {
     setLoading(true);
     e.preventDefault();
@@ -19,19 +19,23 @@ function Form({ setFooterAnimationClasses }) {
 
   return (
     <>
-      <div id="form">
+      <form id="form" onSubmit={e => handleClick(e)}>
         <label htmlFor="wordInput">Your Word: </label>
         <input ref={wordInput} id="wordInput" type="text" />
         <button onClick={(e) => handleClick(e)}>Get Rhymes</button>
-      </div>
+      </form>
       <div className="words-container">
         {loading ? (
           <Loading />
         ) : (
           <ul>
-            {APIWords.map((word) => (
-              <li key={word.word}>{word.word}</li>
-            ))}
+              {APIWords.map((item) => {
+                return <li key={item.word} className="rhyme-words-effect">
+                  {item.word}
+                </li>
+              }
+            )}
+          
           </ul>
         )}
       </div>

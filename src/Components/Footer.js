@@ -1,4 +1,5 @@
 import instagramLogo from "../Assets/instagram-logo-white.png";
+
 function Footer() {
 
   return (

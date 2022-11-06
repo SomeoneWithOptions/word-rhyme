@@ -1,3 +1,17 @@
+:root {
+  --shadow-color: 355deg 87% 10%;
+  --shadow-elevation-high: 0.5px 0.3px 0.4px hsl(var(--shadow-color) / 0.71),
+    0.6px 0.4px 0.5px -0.6px hsl(var(--shadow-color) / 0.64),
+    1.3px 0.8px 1.1px -1.1px hsl(var(--shadow-color) / 0.57),
+    3.2px 1.8px 2.8px -1.7px hsl(var(--shadow-color) / 0.5),
+    6.7px 3.9px 5.8px -2.2px hsl(var(--shadow-color) / 0.43),
+    12.7px 7.3px 11px -2.8px hsl(var(--shadow-color) / 0.36),
+    21.5px 12.4px 18.6px -3.3px hsl(var(--shadow-color) / 0.29),
+    33.8px 19.5px 29.3px -3.9px hsl(var(--shadow-color) / 0.21),
+    50.2px 29px 43.5px -4.4px hsl(var(--shadow-color) / 0.14),
+    71.2px 41.1px 61.7px -5px hsl(var(--shadow-color) / 0.07);
+}
+
 .App {
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -12,19 +26,22 @@ body {
 }
 #form label {
   color: #fff;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 600;
 }
 
 #form input {
-  width: 85%;
+  border-left-color: black;
+  outline: none;
+  width: 80%;
   padding: 1rem;
   margin: 1rem 0;
   border: none;
-  border-radius: 0.5rem;
-  font-size: 2rem;
+  border-radius: 50px;
+  font-size: 2.2rem;
   font-weight: 400;
   text-align: center;
+  box-shadow: var(--shadow-elevation-high);
 }
 
 #form button {
@@ -37,6 +54,7 @@ body {
   background-color: #fff;
   color: #7b081da8;
   cursor: pointer;
+  box-shadow: var(--shadow-elevation-high);
 }
 .loading-icon {
   width: 80px;
@@ -45,9 +63,12 @@ body {
 }
 
 footer {
+  height: 20px;
   position: fixed;
-  bottom: 0;
-  width: 100%;
+  right: 0;
+  bottom: 20px;
+  left: 35%;
+
 }
 
 footer a {
@@ -55,7 +76,6 @@ footer a {
   color: white;
   font-size: 1rem;
   font-weight: 200;
-  position: absolute;
   bottom: 0;
   left: 5px;
   text-decoration: none;
@@ -87,9 +107,6 @@ li {
   font-size: 1.5rem;
 }
 
-.words-container {
-  margin-bottom: 3rem;
-}
 @media (min-width: 768px) {
   body {
     display: flex;
@@ -115,14 +132,23 @@ li {
     width: fit-content;
     align-self: center;
   }
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+  }
+}
+
+.rhyme-words-effect {
+  animation: rhyme-words-effect 400ms ease forwards;
 }
 
 .footerFontReduce {
-  animation: footerFontReduce 3s ease forwards;
+  animation: footerFontReduce 1s ease forwards;
 }
 
 .footerimageReduce {
-  animation: footerimageReduce 3s ease forwards;
+  animation: footerimageReduce 1s ease forwards;
 }
 
 @keyframes loading {
@@ -161,5 +187,15 @@ li {
     width: 30px;
     height: 30px;
   }
-  
+}
+
+@keyframes rhyme-words-effect {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
